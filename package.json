@@ -18,7 +18,7 @@
     "google-libphonenumber": "^3.2.42",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.0",
-    "mongoose-autopopulate": "^.1.0",
+    "mongoose-autopopulate": "^1.1.0",
     "mongoose-sequence": "^6.0.1",
     "multer": "^2.0.1",
     "nodemailer": "^7.0.3",
