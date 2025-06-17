@@ -4,7 +4,7 @@ API developed in JavaScript with Node, Express, MongoDB, Mongoose, JWT authentic
 
 The API creates users, accounts and fictitious bank transactions, retrieves data of users, accounts and transactions recorded in the database, updates data and deletes users (CRUD), according to the user's access profile.
 
-This project is already published on Heroku at https://bank-as-a-service.herokuapp.com/.
+This project will be published on Netlify.
 
 A Front End with React will soon be developed, so that this project is a complete MERN.
 

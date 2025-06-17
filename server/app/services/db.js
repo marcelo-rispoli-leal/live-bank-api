@@ -3,17 +3,16 @@ import mongoose from 'mongoose';
 import userModel from '../models/user.js';
 import accountModel from '../models/account.js';
 import transactionModel from '../models/transaction.js';
+import dotenv from 'dotenv';
+
+//loads environment variables
+dotenv.config();
+const { MONGOURI } = process.env;
 
 //creates database connection
 const db = {};
 db.mongoose = mongoose;
-db.url = process.env.MONGOURL;
-db.mongoose.connect(db.url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-});
+db.mongoose.connect(MONGOURI);
 
 //associates models with the database
 db.userModel = userModel(mongoose);

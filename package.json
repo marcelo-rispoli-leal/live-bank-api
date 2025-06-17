@@ -1,40 +1,37 @@
 {
   "name": "live-baas-api",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "NodeJs Bank as a Service (BaaS)",
   "main": "server/index.js",
   "scripts": {
-    "server": "nodemon -r dotenv/config --experimental-modules ./server/app.js",
-    "start": "node -r dotenv/config --experimental-modules ./server/app.js",
+    "server": "nodemon ./server/app.js",
+    "start": "node ./server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "marcelo-rispoli-leal",
   "license": "MIT",
   "dependencies": {
-    "bcryptjs": "2.4.3",
-    "dotenv": "8.2.0",
-    "express": "4.17.1",
-    "google-libphonenumber": "3.2.13",
-    "jsonwebtoken": "8.5.1",
-    "mongoose": "5.10.2",
-    "mongoose-autopopulate": "0.12.2",
-    "mongoose-sequence": "5.2.2",
-    "multer": "1.4.2",
-    "nodemailer": "6.4.11",
-    "swagger-ui-express": "4.1.4",
-    "validator": "13.1.1"
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "google-libphonenumber": "^3.2.42",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.0",
+    "mongoose-autopopulate": "^.1.0",
+    "mongoose-sequence": "^6.0.1",
+    "multer": "^2.0.1",
+    "nodemailer": "^7.0.3",
+    "swagger-ui-express": "^5.0.1",
+    "validator": "^13.15.15"
   },
   "devDependencies": {
-    "nodemon": "2.0.4"
+    "nodemon": "^3.1.10"
   },
   "nodemonConfig": {
     "ignore": [
       "client/"
     ]
-  },
-  "engines": {
-    "node": "12.18.3"
   },
   "type": "module"
 }
