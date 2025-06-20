@@ -16,7 +16,7 @@ A Node.js API built with Express and MongoDB, featuring:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-repo/live-bank-api.git
+git clone https://github.com/marcelo-rispoli-leal/live-bank-api.git
 ```
 
 2. Install dependencies:
