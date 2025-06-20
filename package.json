@@ -1,6 +1,6 @@
 {
   "name": "live-bank-api",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "NodeJs Bank as a Service (BaaS)",
   "main": "server/index.js",
   "scripts": {

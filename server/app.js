@@ -55,13 +55,28 @@ app.listen(port, async () => {
   }
 });
 
-// Adicionar esta função para manter a API ativa
+// Added this function to keep the API alive and return the current IP address
 const keepAlive = () => {
   axios
-    .get(host)
-    .then(() => console.log('Keep-alive ping successful'))
-    .catch((err) => console.log('Keep-alive ping failed:', err.message));
+    .get('https://api.ipify.org?format=json')
+    .then((response) => {
+      const publicIp = response.data.ip;
+      axios
+        .get(host)
+        .then(() =>
+          console.log(
+            `Keep-alive successful | Public IP: ${publicIp} | Port: ${port}`
+          )
+        )
+        .catch((err) =>
+          console.log(
+            `Keep-alive failed | Public IP: ${publicIp} | Port: ${port} | Error:`,
+            err.message
+          )
+        );
+    })
+    .catch((err) => console.log('Failed to get public IP:', err.message));
 };
 
-// Agendar o keep-alive a cada 12 minutos
+// Schedule a keep-alive every 12 minutes
 cron.schedule('*/12 * * * *', keepAlive);
