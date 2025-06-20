@@ -2,6 +2,8 @@
 import 'dotenv/config';
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
+import cron from 'node-cron';
+import axios from 'axios';
 import { swaggerDoc } from './app/docs/doc.js';
 //import router controllers
 import { authRouter } from './app/routes/authRouter.js';
@@ -42,12 +44,24 @@ app.use('/', (err, _, res, __) => {
 
 //backend listening
 const { HOST, PORT } = process.env;
+const host = HOST || 'http://localhost:3001';
 const port = PORT || 3001;
 
 app.listen(port, async () => {
   try {
-    console.log(`API Started on host '${HOST}'`);
+    console.log(`API Started on host '${host}' and port '${port}'`);
   } catch (err) {
     console.log(err);
   }
 });
+
+// Adicionar esta função para manter a API ativa
+const keepAlive = () => {
+  axios
+    .get(host)
+    .then(() => console.log('Keep-alive ping successful'))
+    .catch((err) => console.log('Keep-alive ping failed:', err.message));
+};
+
+// Agendar o keep-alive a cada 12 minutos
+cron.schedule('*/12 * * * *', keepAlive);
